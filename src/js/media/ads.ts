@@ -663,6 +663,8 @@ class Ads {
      * @memberof Ads
      */
     private _error(event: any): void {
+        const e = addEvent('adError');
+        this.element.dispatchEvent(e);
         console.error(`Ad error: ${event.getError().toString()}`);
         if (Array.isArray(this.ads) && this.ads.length > 1 && this.currentAdsIndex <= this.ads.length) {
             this.currentAdsIndex++;
