@@ -292,7 +292,7 @@ class Ads {
         this.promise = (typeof google === 'undefined' || typeof google.ima === 'undefined') ?
             loadScript(path) : new Promise(resolve => resolve());
 
-        this.promise.then(this.load.bind(this));
+        this.promise.then(this.load.bind(this, true));
         return this;
     }
 
